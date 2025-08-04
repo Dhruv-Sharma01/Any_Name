@@ -1,13 +1,11 @@
 """A simple module to demonstrate a clean Python script for Pylint."""
 
-import math
-
 
 def compare_values(x: int, y: int) -> str:
     """Compares two integers and returns a message."""
     if x > y:
         return "x is greater"
-    elif y > x:
+    if y > x:
         return "y is greater"
     return "equal"
 
@@ -17,8 +15,7 @@ def process_values() -> int:
     for i in range(10):
         if i % 2 == 0:
             continue
-        else:
-            break
+        break
     return i
 
 
@@ -33,6 +30,5 @@ def increment(x: int) -> int:
 
 
 if __name__ == "__main__":
-    result = compare_values(5, 3)
-    print(result)
+    print(compare_values(5, 3))
     print(process_values())
