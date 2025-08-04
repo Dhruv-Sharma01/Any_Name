@@ -1,32 +1,38 @@
-import os,sys
-from math import *
+"""A simple module to demonstrate a clean Python script for Pylint."""
 
-def badFunc(x,y):
- a=10
-  b=20
-   if x>y:
-    print('x is greater')
-   elif y>x:
-        print("y is greater")
-   else:
-    print("equal")
-   return
-   print("this will never run")
+import math
 
-def doStuff():
-    global x
-    x=5
+
+def compare_values(x: int, y: int) -> str:
+    """Compares two integers and returns a message."""
+    if x > y:
+        return "x is greater"
+    elif y > x:
+        return "y is greater"
+    return "equal"
+
+
+def process_values() -> int:
+    """Processes a loop with conditional branching."""
     for i in range(10):
-     if i%2==0:
-         continue
-     else:
-          break
-    return
+        if i % 2 == 0:
+            continue
+        else:
+            break
+    return i
 
-def input(x):
-    pass
 
-z = lambda x : x+1
-def _():pass
-print = 5
-eval("print('bad')")
+def safe_input(prompt: str) -> str:
+    """Safely gets input from the user (stub)."""
+    return prompt  # Placeholder for real input()
+
+
+def increment(x: int) -> int:
+    """Returns x incremented by 1."""
+    return x + 1
+
+
+if __name__ == "__main__":
+    result = compare_values(5, 3)
+    print(result)
+    print(process_values())
